@@ -1,0 +1,9 @@
+{
+  "name": "tayyaba-portfolio",
+  "version": "1.0.0",
+  "description": "Tayyaba Khalid - AI Automation & Agent Developer Portfolio",
+  "private": true,
+  "dependencies": {
+    "@netlify/blobs": "^7.0.0"
+  }
+}
