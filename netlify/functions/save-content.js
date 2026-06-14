@@ -4,7 +4,7 @@
 // Requires a valid admin session token (created by verify-admin.js)
 // passed in the "x-admin-token" header.
 
-const { getStore } = require('@netlify/blobs');
+const { getContentStore } = require('./_store');
 const { isValidToken } = require('./_auth');
 
 const STORE_NAME = 'portfolio-content';
@@ -34,7 +34,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const store = getStore(STORE_NAME);
+    const store = getContentStore(STORE_NAME);
     const existing = (await store.get(KEY, { type: 'json' })) || {};
 
     existing[key] = value;
