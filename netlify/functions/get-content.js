@@ -5,14 +5,14 @@
 // Netlify Blobs. Publicly readable — no auth required, since this is just
 // the data needed to render the public site.
 
-const { getStore } = require('@netlify/blobs');
+const { getContentStore } = require('./_store');
 
 const STORE_NAME = 'portfolio-content';
 const KEY = 'content';
 
 exports.handler = async () => {
   try {
-    const store = getStore(STORE_NAME);
+    const store = getContentStore(STORE_NAME);
     const data = await store.get(KEY, { type: 'json' });
 
     return {
